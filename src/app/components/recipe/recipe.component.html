@@ -1,0 +1,26 @@
+<div class="container">
+    @if(recipe){
+    <div class="image">
+        <img [src]="recipe.image" [alt]="recipe.name">
+    </div>
+    <div class="recipe">
+        <h2>{{recipe.name}}</h2>
+        <p><u>Ingredients :</u></p>
+        <ul>
+            @for(ingredient of recipe.ingredients; track ingredient){
+            <li>{{ingredient}}</li>
+            } @empty{
+            <p>No ingredient</p>
+            }
+        </ul>
+        <p><u>Instructions :</u></p>
+        <ul>
+            @for(instruction of recipe.instructions; track instruction){
+            <li>{{instruction}}</li>
+            } @empty{
+            <p>No instruction</p>
+            }
+        </ul>
+    </div>
+    }
+</div>

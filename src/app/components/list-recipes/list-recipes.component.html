@@ -1,0 +1,10 @@
+@if(recipes){
+<mat-paginator [length]="recipes.total" [pageSize]="limit" [pageSizeOptions]="[6, 9, 12, 25, 50]"
+    (page)="handlePageEvent($event)" aria-label="Select page">
+</mat-paginator>
+<div class="container">
+    @for(recipe of recipes.recipes; track recipe.id){
+    <app-recipe-card [recipe]="recipe"></app-recipe-card>
+    }
+</div>
+}
